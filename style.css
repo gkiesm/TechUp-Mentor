@@ -45,13 +45,16 @@ h1, h4 {
 
 }
 
-.search-container {
+.search {
     display: flex;
     justify-content: center;
     padding: 10px;
     width: 100%;
 }
 
-.search-results {
-    padding: 10px;
+.results {
+    padding: 50px;
+    white-space: pre-line;
+   
 }
+
