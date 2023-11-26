@@ -1,6 +1,7 @@
 function recommend() {
     
     let searchTerm = document.querySelector('.form-control-lg').value.toLowerCase();
+    let searchTermsArray = searchTerm.split(' ');
 
 
     function mentor (name, title, email) {
@@ -11,14 +12,17 @@ function recommend() {
     let mentors = [ 
     new mentor("John Doe", "Product Director", "john.doe@gov.sg"),
     new mentor("Jane Smith", "Senior Product Manager", "jane.smith@gov.sg"),
-    new mentor("Jack Stone", "Data Scientist", "jack.stoneh@gov.sg"),
+    new mentor("Jack Stone", "Data Scientist", "jack.stone@gov.sg"),
     new mentor("Harry Daly", "Software Engineer", "harry.daly@gov.sg"),
-    new mentor("Joe Berg" , "Cybersecurity Engineer", "joe.berg@gov.sg")
+    new mentor("Joe Berg", "Cybersecurity Engineer", "joe.berg@gov.sg"),
+    new mentor("Mia Wong", "Tech Policy Director", "mia.wong@gov.sg"),
     ];
 
     let filteredMentors = mentors.filter(mentor =>
-        Object.values(mentor).some(value =>
-            typeof value === "string" && value.toLowerCase().includes(searchTerm.toLowerCase())
+        searchTermsArray.some(termPart =>
+            Object.values(mentor)
+                .some(value =>
+                    typeof value === "string" && value.toLowerCase().includes(termPart))
         )
     );
 
@@ -50,8 +54,8 @@ function recommend() {
 
     } else {
         // If no mentors are found
-        let resultsElement = document.createElement("p");
-        resultsElement.textContent = "No mentors found";
+        let resultsElement = document.createElement("h2");
+        resultsElement.textContent = "No mentors found.";
         resultsContainer.appendChild(resultsElement);
     }
 
