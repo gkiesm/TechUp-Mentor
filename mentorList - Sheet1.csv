@@ -1,6 +1,8 @@
-Interest,name,description,email,image
-dsaid,He Ruimin,Chief AI Officer,He_Ruimin@pmo.gov.sg,
-product,Chen Kaiwei,Product Director,Chen_Kaiwei@pmo.gov.sg,
-appdev,Weng Wanyi,"Director, App Development",Weng_Wanyi@pmo.gov.sg,
-cybersecurity,Wang Jiun Haur,"Director, Governance",Wang_Jiun_Haur@pmo.gov.sg,
-techmgmt,Ha Seok Jin,Tech Policy Director,Ha_Seok_Jin@pmo.gov.sg,
+name,title,email,image
+John Doe,Product Director,john.doe@gov.sg,
+Jane Smith,Senior Product Manager,jane.smith@gov.sg,
+Jac Stone,Data Scientist,jac.stone@gov.sg,
+Harry Daly,Software Engineer,harry.daly@gov.sg,
+Joe Berg,Cybersecurity Engineer,joe.berg@gov.sg,
+Mia Wong,Tech Policy Director,mia.wong@gov.sg,
+Frank Warner,Chief AI Officer,frank.warner@gov.sg,

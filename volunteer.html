@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=S, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Sign up as Mentor</title>
 </head>
 <body>
     <h2>Sign up as Mentor</h2>
-    <form></form>
+
+    <form action="/submit" method="post">
+        <label for = "fullName">Full Name</label>
+        <input type="text" name="fullName" required>
+        <label for = "title">Title</label>
+        <input type="text" name="title" required>
+        <label for = "email">Email</label>
+        <input type="text" name="email" required>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>

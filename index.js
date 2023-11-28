@@ -3,7 +3,6 @@ function recommend() {
     let searchTerm = document.querySelector('.form-control-lg').value.toLowerCase();
     let searchTermsArray = searchTerm.split(' ');
 
-
     function mentor (name, title, email) {
         this.name = name;
         this.title = title;
@@ -50,7 +49,6 @@ function recommend() {
                 
             resultsContainer.appendChild(document.createElement("hr"));
             });
-
 
     } else {
         // If no mentors are found
