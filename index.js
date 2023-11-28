@@ -40,6 +40,6 @@ app.use(express.static('public'));
 app.listen(process.env.PORT);
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(process.cwd(), 'public/index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
   });
   
