@@ -3,6 +3,10 @@ dotenv.config();
 
 import pg from "pg";
 
+import express from 'express';
+const app = express();
+
+
 const db = new pg.Client({
     user: process.env.DB_USER,
     host: process.env.DATABASE_URL,
@@ -30,3 +34,7 @@ db.end();
 });
 }
 });
+
+app.use(express.static('public'));
+app.listen(process.env.PORT);
+  
