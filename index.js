@@ -6,6 +6,7 @@ import pg from "pg";
 import express from 'express';
 const app = express();
 
+import path from 'path';
 
 const db = new pg.Client({
     user: process.env.DB_USER,
@@ -37,4 +38,8 @@ db.end();
 
 app.use(express.static('public'));
 app.listen(process.env.PORT);
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(process.cwd(), 'public/index.html'));
+  });
   
