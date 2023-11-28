@@ -12,6 +12,15 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const port = process.env.PORT || 3000;
 
+app.use(express.static('public'));
+app.listen(process.env.PORT); {
+    console.log(`Server is running on port ${port}`)
+};
+
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + "/public/index.html");
+  });
+
 const db = new pg.Client({
     user: process.env.DB_USER,
     host: process.env.DATABASE_URL,
@@ -40,12 +49,3 @@ db.end();
 }
 });
 
-app.use(express.static('public'));
-app.listen(process.env.PORT); {
-    console.log(`Server is running on port ${port}`)
-};
-
-app.get('/', function(req, res) {
-    res.sendFile(__dirname + "/public/index.html");
-  });
-  
