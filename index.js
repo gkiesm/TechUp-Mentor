@@ -8,6 +8,8 @@ const app = express();
 
 import path from 'path';
 
+const port = process.env.PORT || 3000;
+
 const db = new pg.Client({
     user: process.env.DB_USER,
     host: process.env.DATABASE_URL,
@@ -37,7 +39,9 @@ db.end();
 });
 
 app.use(express.static('public'));
-app.listen(process.env.PORT);
+app.listen(process.env.PORT); {
+    console.log(`Server is running on port ${port}`)
+};
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
