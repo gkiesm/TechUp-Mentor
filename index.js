@@ -6,7 +6,9 @@ import pg from "pg";
 import express from 'express';
 const app = express();
 
-import path from 'path';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const port = process.env.PORT || 3000;
 
@@ -44,6 +46,6 @@ app.listen(process.env.PORT); {
 };
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(__dirname + "/public/index.html");
   });
   
